@@ -63,8 +63,8 @@ No modules.
 | [scaleway_instance_ip.instances_v6](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_ip) | resource |
 | [scaleway_instance_private_nic.instances](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_private_nic) | resource |
 | [scaleway_instance_server.instances](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/instance_server) | resource |
-| [scaleway_ipam_ip.controlplane_v4](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/ipam_ip) | resource |
-| [scaleway_ipam_ip.controlplane_v6](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/ipam_ip) | resource |
+| [scaleway_ipam_ip.instances_v4](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/ipam_ip) | resource |
+| [scaleway_ipam_ip.instances_v6](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/ipam_ip) | resource |
 
 ## Inputs
 
