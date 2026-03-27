@@ -17,7 +17,7 @@ output "instances" {
   value = local.instances
 }
 
-resource "scaleway_ipam_ip" "controlplane_v4" {
+resource "scaleway_ipam_ip" "instances_v4" {
   for_each = local.instances
 
   address = each.value.ipv4
@@ -28,7 +28,7 @@ resource "scaleway_ipam_ip" "controlplane_v4" {
   tags = var.tags
 }
 
-resource "scaleway_ipam_ip" "controlplane_v6" {
+resource "scaleway_ipam_ip" "instances_v6" {
   for_each = local.instances
 
   is_ipv6 = true
@@ -95,7 +95,8 @@ resource "scaleway_instance_server" "instances" {
 resource "scaleway_instance_private_nic" "instances" {
   for_each = local.instances
 
+  zone               = each.value.zone
   private_network_id = each.value.network_id
   server_id          = scaleway_instance_server.instances[each.key].id
-  ipam_ip_ids        = [scaleway_ipam_ip.controlplane_v4[each.key].id, scaleway_ipam_ip.controlplane_v6[each.key].id]
+  ipam_ip_ids        = [scaleway_ipam_ip.instances_v4[each.key].id, scaleway_ipam_ip.instances_v6[each.key].id]
 }
